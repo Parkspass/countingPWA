@@ -1,6 +1,25 @@
+@font-face{
+    font-family: "myRoboto";
+    src: url("fonts/Roboto/Roboto-Regular.ttf");
+}
+@font-face{
+    font-family: "titleRoboto";
+    src: url("fonts/Roboto_Slab/static/RobotoSlab-Regular.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+body{
+    font-family: 'myRoboto';
+    font-style: normal;
+    font-weight: normal;
+}
 
-
-
+#bison{
+    height: 50px;
+    width: 50px;
+    vertical-align: middle;
+    margin-right: 25px;
+}
 
 #loginTitle{
     font-size: 30px;
@@ -10,7 +29,6 @@
     margin: 20px;
     cursor: pointer;
 }
-
 
 .formWrapper{
     width: 384px;
@@ -24,7 +42,8 @@
     margin-top: 40px;
 }
 .inputs{
-    border: 1px solid #666666;
+    background: #E8E8E8;
+    color: black;
     box-sizing: border-box;
     border-radius: 8px;
     width: 384px;
@@ -33,16 +52,34 @@
     padding-left: 15px;
     margin-top: 25px;
 }
-.submitButton{
-    border: 1px solid #666666;
+.parkSelect{
+    background: #E8E8E8;
+    color: black;
     box-sizing: border-box;
-    border-radius: 20px;
-    font-size: 16px;
-    line-height: 19px;
-    color: #666666;
-    width: 72px;
-    height: 39px;
-    margin-top: 25px;
+    border-radius: 8px !important;
+    width: 384px !important;
+    height: 56px !important;
+    vertical-align: middle !important;
+    padding-left: 15px !important;
+    margin-top: 25px !important;
+    box-shadow: none;
+    padding: none;
+}
+.submitButton{
+    border: 2px solid #30481E;
+    box-sizing: border-box;
+    border-radius: 8px;
+    color: #30481E;
+    font-size: 18px;
+    line-height: 21px;
+    width: 87px;
+    height: 48px;
+    text-align: center;
+    vertical-align: middle;
     text-transform: uppercase;
     cursor: pointer;
+    margin-top: 40px;
+}
+.right{
+    text-align: right;
 }

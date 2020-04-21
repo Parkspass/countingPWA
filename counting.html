@@ -21,7 +21,7 @@
                     <div v-if="page == 'login' ">
                         <div> <!-- App bar for login page -->
 							<v-app-bar >
-								<v-toolbar-title id="loginTitle" v-on:click="MainPage='login' ">Parks Count</v-toolbar-title>
+								<v-toolbar-title id="loginTitle" v-on:click="MainPage='login' "><img id="bison" src="icons/greenBison.svg">Parks Count</v-toolbar-title>
 							</v-app-bar>
                         </div>
                         <div class="formWrapper">
@@ -30,15 +30,17 @@
                             <div>
                                 <!-- <input class="inputs" placeholder="Park" type="text"> -->
                                 <v-overflow-btn 
-                                    class="my-2 " rounded :items="parks" label="Park" >
+                                    class="parkSelect" :items="parks" placeholder="Park" >
                                 </v-overflow-btn>
                             </div>
 
 							<div v-if="passEmpty" v-bind:class="{passError: passEmpty}">Password</div>
 							<input class="inputs" v-bind:class="{pass: passEmpty}" v-model="passField" placeholder="Password" type="text">
 							<div v-if="passEmpty" v-bind:class="{passReq: passEmpty}">Invalid Password</div>
-							
-							<button class="submitButton" v-on:click="loginClicked">Login</button>
+                            
+                            <div class="right">
+                                <button class="submitButton" v-on:click="loginClicked">Login</button>
+                            </div>
 						</div>
                     </div>
                     <div v-if="page == 'loggedin'">

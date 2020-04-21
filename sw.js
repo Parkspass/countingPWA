@@ -15,6 +15,7 @@ self.addEventListener('install', function(e) {
         './icons/favicon.ico',
         './icons/mstile-150x150.png',
         './icons/safari-pinned-tab.svg',
+        './fonts',
         './site.webmanifest',
         './counting.css',
         './counting.html',
