@@ -8,21 +8,18 @@ self.addEventListener('install', function(e) {
   e.waitUntil(
     caches.open(cacheName).then(function(cache) {
       return cache.addAll([
-        './android-chrome-192x192.png',
-        './android-chrome-512x512.png',
-        './apple-touch-icon.png',
         './browserconfig.xml',
-        './favicon-16x16.png',
-        './favicon-32x32.png',
-        './favicon.ico',
-        './mstile-150x150.png',
-        './safari-pinned-tab.svg',
+        './icons/android-chrome-192x192.png',
+        './icons/android-chrome-512x512.png',
+        './icons/apple-touch-icon.png',
+        './icons/favicon.ico',
+        './icons/mstile-150x150.png',
+        './icons/safari-pinned-tab.svg',
         './site.webmanifest',
+        './counting.css',
+        './counting.html',
+        './counting.js',
         './sw.js',
-        './trailTracker.css',
-        './trailTracker.html',
-        './trailTracker.js'
-
       ]).then(() => self.skipWaiting());
     })
   );
@@ -38,19 +35,3 @@ self.addEventListener('fetch', function(e) {
     })
   );
 });
-
-// var cacheName = 'hello-pwa';
-// var filesToCache = [
-//   '/',
-//   '/index.html',
-//   '/css/style.css',
-//   '/js/main.js'
-// ];
-
-
-
-// /* Serve cached content when offline */
-// self.addEventListener('fetch', function(e) {
-//   e.respondWith(
-//     caches.match(e.request).then(function(response) {
-//       return response || fetch(e.request);
