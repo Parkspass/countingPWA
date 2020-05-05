@@ -21,22 +21,20 @@
                     <div v-if="page == 'login' ">
                         <div> <!-- App bar for login page -->
 							<v-app-bar >
-								<v-toolbar-title id="loginTitle" v-on:click="MainPage='login' "><img id="bison" src="icons/greenBison.svg">Parks Count</v-toolbar-title>
+								<v-toolbar-title id="loginTitle" v-on:click="page='login' "><img id="bison" src="icons/greenBison.svg">Parks Count</v-toolbar-title>
 							</v-app-bar>
                         </div>
                         <div class="formWrapper">
                             <div class="loginTitles">Login</div>
                             
-                            <div>
-                                <!-- <input class="inputs" placeholder="Park" type="text"> -->
-                                <v-overflow-btn 
-                                    class="parkSelect" :items="parks" placeholder="Park" >
-                                </v-overflow-btn>
-                            </div>
+                            <!-- <input class="inputs" placeholder="Park" type="text"> -->
+                            <v-select class="parkSelect" v-model="parkField" :items="parks" label="Park"></v-select>
+                            <div v-if="parkEmpty" v-bind:class="{parkReq: parkEmpty}">Required</div>
+                            <div class="req" v-else>Required</div>
 
-							<div v-if="passEmpty" v-bind:class="{passError: passEmpty}">Password</div>
-							<input class="inputs" v-bind:class="{pass: passEmpty}" v-model="passField" placeholder="Password" type="text">
-							<div v-if="passEmpty" v-bind:class="{passReq: passEmpty}">Invalid Password</div>
+							<input class="inputs" v-model="passField" placeholder="Password" type="text">
+                            <div v-if="passEmpty" v-bind:class="{passReq: passEmpty}">Required</div>
+                            <div class="req" v-else>Required</div>
                             
                             <div class="right">
                                 <button class="submitButton" v-on:click="loginClicked">Login</button>
@@ -44,7 +42,15 @@
 						</div>
                     </div>
                     <div v-if="page == 'loggedin'">
-                        <h1>loggedin</h1>
+                        <div> <!-- App bar for loggedin page -->
+                            <v-app-bar >
+                                <v-toolbar-title id="loginTitle" v-on:click="page='loggedin' "><img id="bison" src="icons/greenBison.svg">Parks Count</v-toolbar-title>
+                            </v-app-bar>
+                            <div class="pageWrapper">
+                                <h2 id="date">{{todaysDate}}</h2>
+                                <h1 id="parkTitle">{{currentPark}}</h1>
+                            </div>
+                        </div>
                     </div>
                 </v-content>
             </v-app>
